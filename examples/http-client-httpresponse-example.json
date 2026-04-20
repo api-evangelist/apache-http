@@ -1,0 +1,9 @@
+{
+  "statusCode": 200,
+  "reasonPhrase": "OK",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": "{\"result\": \"ok\"}",
+  "contentType": "application/json"
+}

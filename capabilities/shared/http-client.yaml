@@ -1,0 +1,29 @@
+name: Apache HttpComponents Client API
+description: Shared capability definitions for Apache HttpComponents HTTP client operations
+baseUrl: https://api.example.com
+transport: rest
+version: "5.3.0"
+operations:
+  - operationId: executeRequest
+    name: Apache HttpComponents Execute Request
+    description: Execute an HTTP request using the Apache HttpComponents client
+    method: POST
+    path: /execute
+    tags:
+      - Requests
+
+  - operationId: configureConnection
+    name: Apache HttpComponents Configure Connection
+    description: Update connection pool and timeout configuration
+    method: PUT
+    path: /configure/connection
+    tags:
+      - Configuration
+
+  - operationId: configureProxy
+    name: Apache HttpComponents Configure Proxy
+    description: Configure an HTTP proxy for outbound requests
+    method: PUT
+    path: /configure/proxy
+    tags:
+      - Configuration

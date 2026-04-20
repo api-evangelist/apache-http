@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://api-evangelist.github.io/apache-http/json-structure/http-client-connectionconfig-structure.json",
+  "title": "ConnectionConfig",
+  "type": "object",
+  "properties": {
+    "connectTimeout": "int32",
+    "socketTimeout": "int32",
+    "maxConnections": "int32",
+    "maxConnectionsPerRoute": "int32",
+    "keepAliveTimeout": "int32"
+  }
+}

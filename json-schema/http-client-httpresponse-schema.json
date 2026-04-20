@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api-evangelist.github.io/apache-http/json-schema/http-client-httpresponse-schema.json",
+  "title": "HttpResponse",
+  "type": "object",
+  "description": "HTTP response from Apache HttpComponents client execution",
+  "properties": {
+    "statusCode": {
+      "type": "integer",
+      "description": "HTTP response status code",
+      "example": 200
+    },
+    "reasonPhrase": {
+      "type": "string",
+      "description": "HTTP reason phrase",
+      "example": "OK"
+    },
+    "headers": {
+      "type": "object",
+      "description": "Response headers as key-value pairs",
+      "example": {
+        "Content-Type": "application/json"
+      }
+    },
+    "body": {
+      "type": "string",
+      "description": "Response body content",
+      "example": "{\"result\": \"ok\"}"
+    },
+    "contentType": {
+      "type": "string",
+      "description": "Content-Type of the response body",
+      "example": "application/json"
+    }
+  }
+}

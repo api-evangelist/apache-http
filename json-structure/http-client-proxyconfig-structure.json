@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://api-evangelist.github.io/apache-http/json-structure/http-client-proxyconfig-structure.json",
+  "title": "ProxyConfig",
+  "type": "object",
+  "properties": {
+    "host": "string",
+    "port": "int32",
+    "scheme": "string",
+    "username": "string",
+    "password": "string"
+  }
+}

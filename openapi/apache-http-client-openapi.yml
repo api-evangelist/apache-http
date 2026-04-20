@@ -1,0 +1,175 @@
+openapi: 3.0.3
+info:
+  title: Apache HttpComponents Client API
+  version: 5.3.0
+  description: Reference API specification for Apache HttpComponents HTTP client library,
+    covering request execution, connection management, authentication, and proxy configuration.
+  contact:
+    email: dev@hc.apache.org
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://api.example.com
+  description: Example target server for HttpComponents client
+tags:
+- name: Requests
+  description: HTTP request execution operations
+- name: Configuration
+  description: Client configuration operations
+paths:
+  /execute:
+    post:
+      operationId: executeRequest
+      summary: Apache HttpComponents Execute Request
+      description: Execute an HTTP request using the Apache HttpComponents client
+        with the provided request configuration.
+      tags:
+      - Requests
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HttpRequest'
+      responses:
+        '200':
+          description: Request executed successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpResponse'
+  /configure/connection:
+    put:
+      operationId: configureConnection
+      summary: Apache HttpComponents Configure Connection
+      description: Update connection pool and timeout configuration for the HTTP client.
+      tags:
+      - Configuration
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConnectionConfig'
+      responses:
+        '200':
+          description: Configuration updated
+  /configure/proxy:
+    put:
+      operationId: configureProxy
+      summary: Apache HttpComponents Configure Proxy
+      description: Configure an HTTP proxy for outbound requests from the HttpComponents
+        client.
+      tags:
+      - Configuration
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProxyConfig'
+      responses:
+        '200':
+          description: Proxy configured
+components:
+  schemas:
+    HttpRequest:
+      type: object
+      description: HTTP request configuration for Apache HttpComponents client
+      properties:
+        method:
+          type: string
+          description: HTTP method
+          example: GET
+        uri:
+          type: string
+          description: Request URI
+          example: https://api.example.com/data
+        headers:
+          type: object
+          description: Request headers as key-value pairs
+          example:
+            Accept: application/json
+            Authorization: Bearer token
+        body:
+          type: string
+          description: Request body content
+          example: '{"key": "value"}'
+        contentType:
+          type: string
+          description: Content-Type header value
+          example: application/json
+    HttpResponse:
+      type: object
+      description: HTTP response from Apache HttpComponents client execution
+      properties:
+        statusCode:
+          type: integer
+          description: HTTP response status code
+          example: 200
+        reasonPhrase:
+          type: string
+          description: HTTP reason phrase
+          example: OK
+        headers:
+          type: object
+          description: Response headers as key-value pairs
+          example:
+            Content-Type: application/json
+        body:
+          type: string
+          description: Response body content
+          example: '{"result": "ok"}'
+        contentType:
+          type: string
+          description: Content-Type of the response body
+          example: application/json
+    ConnectionConfig:
+      type: object
+      description: Connection configuration for Apache HttpComponents client
+      properties:
+        connectTimeout:
+          type: integer
+          description: Connection timeout in milliseconds
+          example: 5000
+        socketTimeout:
+          type: integer
+          description: Socket read timeout in milliseconds
+          example: 30000
+        maxConnections:
+          type: integer
+          description: Maximum total connections in pool
+          example: 200
+        maxConnectionsPerRoute:
+          type: integer
+          description: Maximum connections per route
+          example: 20
+        keepAliveTimeout:
+          type: integer
+          description: Keep-alive timeout in milliseconds
+          example: 60000
+    ProxyConfig:
+      type: object
+      description: HTTP proxy configuration for Apache HttpComponents client
+      properties:
+        host:
+          type: string
+          description: Proxy hostname
+          example: proxy.example.com
+        port:
+          type: integer
+          description: Proxy port
+          example: 8080
+        scheme:
+          type: string
+          description: Proxy scheme (http or https)
+          example: http
+        username:
+          type: string
+          description: Proxy authentication username
+          example: proxyuser
+        password:
+          type: string
+          description: Proxy authentication password
+          example: ''

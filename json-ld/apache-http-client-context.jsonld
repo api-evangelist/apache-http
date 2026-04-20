@@ -1,0 +1,23 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "httpclient": "https://hc.apache.org/vocab#",
+    "method": "httpclient:method",
+    "uri": "schema:url",
+    "headers": "httpclient:headers",
+    "body": "httpclient:body",
+    "contentType": "schema:encodingFormat",
+    "statusCode": "httpclient:statusCode",
+    "reasonPhrase": "httpclient:reasonPhrase",
+    "connectTimeout": "httpclient:connectTimeout",
+    "socketTimeout": "httpclient:socketTimeout",
+    "maxConnections": "httpclient:maxConnections",
+    "maxConnectionsPerRoute": "httpclient:maxConnectionsPerRoute",
+    "keepAliveTimeout": "httpclient:keepAliveTimeout",
+    "host": "schema:hostName",
+    "port": "schema:portNumber",
+    "scheme": "httpclient:scheme",
+    "username": "schema:accountId",
+    "password": "httpclient:password"
+  }
+}

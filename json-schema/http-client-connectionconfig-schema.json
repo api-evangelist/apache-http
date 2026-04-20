@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api-evangelist.github.io/apache-http/json-schema/http-client-connectionconfig-schema.json",
+  "title": "ConnectionConfig",
+  "type": "object",
+  "description": "Connection configuration for Apache HttpComponents client",
+  "properties": {
+    "connectTimeout": {
+      "type": "integer",
+      "description": "Connection timeout in milliseconds",
+      "example": 5000
+    },
+    "socketTimeout": {
+      "type": "integer",
+      "description": "Socket read timeout in milliseconds",
+      "example": 30000
+    },
+    "maxConnections": {
+      "type": "integer",
+      "description": "Maximum total connections in pool",
+      "example": 200
+    },
+    "maxConnectionsPerRoute": {
+      "type": "integer",
+      "description": "Maximum connections per route",
+      "example": 20
+    },
+    "keepAliveTimeout": {
+      "type": "integer",
+      "description": "Keep-alive timeout in milliseconds",
+      "example": 60000
+    }
+  }
+}

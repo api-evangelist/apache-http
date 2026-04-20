@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/extended/v0/#",
+  "$id": "https://api-evangelist.github.io/apache-http/json-structure/http-client-httprequest-structure.json",
+  "title": "HttpRequest",
+  "type": "object",
+  "properties": {
+    "method": "string",
+    "uri": "string",
+    "headers": "object",
+    "body": "string",
+    "contentType": "string"
+  }
+}

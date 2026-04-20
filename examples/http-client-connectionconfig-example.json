@@ -1,0 +1,7 @@
+{
+  "connectTimeout": 5000,
+  "socketTimeout": 30000,
+  "maxConnections": 200,
+  "maxConnectionsPerRoute": 20,
+  "keepAliveTimeout": 60000
+}

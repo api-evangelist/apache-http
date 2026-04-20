@@ -1,0 +1,10 @@
+{
+  "method": "GET",
+  "uri": "https://api.example.com/data",
+  "headers": {
+    "Accept": "application/json",
+    "Authorization": "Bearer token"
+  },
+  "body": "{\"key\": \"value\"}",
+  "contentType": "application/json"
+}

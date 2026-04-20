@@ -1,0 +1,58 @@
+name: Apache HttpComponents HTTP Client Integration
+description: Workflow capability for executing HTTP requests and managing connection pools using Apache HttpComponents
+persona: Application Developer
+workflow:
+  - step: configure-connection
+    name: Configure Connection Pool
+    description: Set timeouts and connection pool limits for the HTTP client
+    capability: http-client
+    operation: configureConnection
+    server:
+      rest: https://api.example.com
+      mcp: http://localhost:9090
+
+  - step: execute-request
+    name: Execute HTTP Request
+    description: Make an HTTP request to a target API
+    capability: http-client
+    operation: executeRequest
+    server:
+      rest: https://api.example.com
+      mcp: http://localhost:9090
+
+tools:
+  - name: executeRequest
+    description: Execute an HTTP request using Apache HttpComponents
+    server:
+      rest:
+        baseUrl: https://api.example.com
+        path: /execute
+        method: POST
+      mcp:
+        baseUrl: http://localhost:9090
+        path: /tools/executeRequest
+        method: POST
+
+  - name: configureConnection
+    description: Configure connection pool settings for the HTTP client
+    server:
+      rest:
+        baseUrl: https://api.example.com
+        path: /configure/connection
+        method: PUT
+      mcp:
+        baseUrl: http://localhost:9090
+        path: /tools/configureConnection
+        method: POST
+
+  - name: configureProxy
+    description: Configure HTTP proxy for outbound requests
+    server:
+      rest:
+        baseUrl: https://api.example.com
+        path: /configure/proxy
+        method: PUT
+      mcp:
+        baseUrl: http://localhost:9090
+        path: /tools/configureProxy
+        method: POST

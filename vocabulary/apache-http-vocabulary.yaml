@@ -1,0 +1,41 @@
+name: Apache HttpComponents Vocabulary
+description: Unified taxonomy for Apache HttpComponents HTTP client API resources, actions, workflows, and personas
+version: "5.3.0"
+
+resources:
+  - name: HttpRequest
+    description: HTTP request configuration for execution by the client
+    openapi: "#/components/schemas/HttpRequest"
+    capability: http-client
+  - name: HttpResponse
+    description: HTTP response received from executing a request
+    openapi: "#/components/schemas/HttpResponse"
+    capability: http-client
+  - name: ConnectionConfig
+    description: Connection pool and timeout configuration for the HTTP client
+    openapi: "#/components/schemas/ConnectionConfig"
+    capability: http-client
+  - name: ProxyConfig
+    description: Proxy server configuration for routing outbound HTTP requests
+    openapi: "#/components/schemas/ProxyConfig"
+    capability: http-client
+
+actions:
+  - name: Execute
+    description: Execute an HTTP request and receive a response
+    operationId: executeRequest
+  - name: Configure Connection
+    description: Set connection pool and timeout parameters
+    operationId: configureConnection
+  - name: Configure Proxy
+    description: Set proxy server for outbound requests
+    operationId: configureProxy
+
+workflows:
+  - name: Apache HttpComponents HTTP Client Integration
+    description: Execute HTTP requests and manage connection pools using Apache HttpComponents
+    capability: http-client-integration.yaml
+
+personas:
+  - name: Application Developer
+    description: Developer who integrates Apache HttpComponents into Java applications for HTTP communication
