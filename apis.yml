@@ -36,7 +36,7 @@ apis:
         url: openapi/apache-http-client-openapi.yml
       - type: JSONSchema
         url: json-schema/http-client-httprequest-schema.json
-      - type: JSON-LD
+      - type: JSONLD
         url: json-ld/apache-http-client-context.jsonld
 
   - aid: apache-http:apache-http-java-sdk
