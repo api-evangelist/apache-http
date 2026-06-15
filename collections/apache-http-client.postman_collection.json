@@ -1,0 +1,300 @@
+{
+  "item": [
+    {
+      "id": "4c47e518-55e0-43c7-931b-81ab90b971ef",
+      "name": "Requests",
+      "description": {
+        "content": "HTTP request execution operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6a66a46f-4863-4957-9ae3-9b026bf8d27a",
+          "name": "Apache HttpComponents Execute Request",
+          "request": {
+            "name": "Apache HttpComponents Execute Request",
+            "description": {
+              "content": "Execute an HTTP request using the Apache HttpComponents client with the provided request configuration.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "execute"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"method\": \"<string>\",\n  \"uri\": \"<string>\",\n  \"headers\": \"<object>\",\n  \"body\": \"<string>\",\n  \"contentType\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "930e09a3-902c-49bf-bd01-38c3799fb0e6",
+              "name": "Request executed successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "execute"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"method\": \"GET\",\n  \"uri\": \"https://api.example.com/data\",\n  \"headers\": {\n    \"Accept\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  },\n  \"body\": \"{\\\"key\\\": \\\"value\\\"}\",\n  \"contentType\": \"application/json\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 200,\n  \"reasonPhrase\": \"OK\",\n  \"headers\": {\n    \"Content-Type\": \"application/json\"\n  },\n  \"body\": \"{\\\"result\\\": \\\"ok\\\"}\",\n  \"contentType\": \"application/json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "e387f931-5695-459c-b2bd-9aa42f17f696",
+      "name": "Configuration",
+      "description": {
+        "content": "Client configuration operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1774a5e5-60d5-4710-8b30-8d8d19d8082f",
+          "name": "Apache HttpComponents Configure Connection",
+          "request": {
+            "name": "Apache HttpComponents Configure Connection",
+            "description": {
+              "content": "Update connection pool and timeout configuration for the HTTP client.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "configure",
+                "connection"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"connectTimeout\": \"<integer>\",\n  \"socketTimeout\": \"<integer>\",\n  \"maxConnections\": \"<integer>\",\n  \"maxConnectionsPerRoute\": \"<integer>\",\n  \"keepAliveTimeout\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "46d9062c-71e7-43e6-be78-2e365828c2a9",
+              "name": "Configuration updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configure",
+                    "connection"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"connectTimeout\": 5000,\n  \"socketTimeout\": 30000,\n  \"maxConnections\": 200,\n  \"maxConnectionsPerRoute\": 20,\n  \"keepAliveTimeout\": 60000\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d3f2baf7-6f10-4916-9f39-b1b37171d261",
+          "name": "Apache HttpComponents Configure Proxy",
+          "request": {
+            "name": "Apache HttpComponents Configure Proxy",
+            "description": {
+              "content": "Configure an HTTP proxy for outbound requests from the HttpComponents client.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "configure",
+                "proxy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"host\": \"<string>\",\n  \"port\": \"<integer>\",\n  \"scheme\": \"<string>\",\n  \"username\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c55f7f12-c51c-4601-9238-7e512d386e00",
+              "name": "Proxy configured",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "configure",
+                    "proxy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"host\": \"proxy.example.com\",\n  \"port\": 8080,\n  \"scheme\": \"http\",\n  \"username\": \"proxyuser\",\n  \"password\": \"\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.example.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f957baef-49a6-441b-8824-d088c54d060d",
+    "name": "Apache HttpComponents Client API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Reference API specification for Apache HttpComponents HTTP client library, covering request execution, connection management, authentication, and proxy configuration.\n\nContact Support:\n Email: dev@hc.apache.org",
+      "type": "text/plain"
+    }
+  }
+}
