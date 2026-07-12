@@ -57,6 +57,10 @@ apis:
         url: https://search.maven.org/artifact/org.apache.httpcomponents.client5/httpclient5
         title: Java SDK (Maven Central)
 common:
+  - type: VulnerabilityDisclosure
+    url: security/apache-http-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/apache-http-domain-security.yml
   - type: Documentation
     url: https://hc.apache.org/
   - type: GettingStarted
@@ -109,6 +113,8 @@ common:
         description: Elasticsearch Java client uses HttpComponents for transport-layer HTTP communication.
       - name: Apache Solr
         description: Apache Solr Java client (SolrJ) uses HttpComponents for Solr HTTP API calls.
+  - url: https://hc.apache.org/news.html
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
