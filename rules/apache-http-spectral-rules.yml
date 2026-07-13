@@ -1,56 +1,113 @@
+# apache-http — Spectral ruleset (strengthened)
+# Plain Spectral. Existing hand-authored rules preserved; measured rules added
+# from this provider's own OpenAPI conventions by strengthen_ruleset.py,
+# then self-validated against the spec.
+#
+# Provenance:
+#   - servers-https-only: 100% of servers already https (error)
+#   - servers-expected-domain: 1/1 servers on example.com
+#   - operationid-casing: camel @ 100% (n=3)
+#   - schema-names-casing: pascal @ 100% (n=4)
+#   - schema-properties-casing: snake @ 55% (n=20)
+#   - merge: kept 7 existing, added 6 measured, upgraded 0
+#   - added: servers-https-only, servers-expected-domain, operationid-casing, schema-names-casing, schema-properties-casing, no-empty-descriptions
+extends:
+  - spectral:oas
 rules:
   http-client-operation-summary:
     description: All Apache HttpComponents API operations must have a summary
     severity: error
-    given: "$.paths[*][get,put,post,delete,patch]"
+    given: $.paths[*][get,put,post,delete,patch]
     then:
       field: summary
       function: truthy
-
   http-client-operation-id:
     description: All Apache HttpComponents API operations must have an operationId
     severity: error
-    given: "$.paths[*][get,put,post,delete,patch]"
+    given: $.paths[*][get,put,post,delete,patch]
     then:
       field: operationId
       function: truthy
-
   http-client-operation-tags:
     description: All Apache HttpComponents API operations must have at least one tag
     severity: warn
-    given: "$.paths[*][get,put,post,delete,patch]"
+    given: $.paths[*][get,put,post,delete,patch]
     then:
       field: tags
       function: truthy
-
   http-client-schema-description:
     description: All Apache HttpComponents schema components must have a description
     severity: warn
-    given: "$.components.schemas[*]"
+    given: $.components.schemas[*]
     then:
       field: description
       function: truthy
-
   http-client-property-description:
     description: All Apache HttpComponents schema properties should have descriptions
     severity: info
-    given: "$.components.schemas[*].properties[*]"
+    given: $.components.schemas[*].properties[*]
     then:
       field: description
       function: truthy
-
   http-client-info-contact:
     description: API info must include contact information
     severity: warn
-    given: "$.info"
+    given: $.info
     then:
       field: contact
       function: truthy
-
   http-client-info-license:
     description: API info must include license information
     severity: warn
-    given: "$.info"
+    given: $.info
     then:
       field: license
+      function: truthy
+  servers-https-only:
+    description: Server URLs must use HTTPS.
+    severity: error
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: ^https://
+  servers-expected-domain:
+    description: Server URLs should be on the example.com domain.
+    severity: warn
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: example\.com
+  operationid-casing:
+    description: Operation IDs should be camelCase (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].operationId
+    then:
+      function: casing
+      functionOptions:
+        type: camel
+  schema-names-casing:
+    description: Component schema names should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.components.schemas
+    then:
+      field: '@key'
+      function: casing
+      functionOptions:
+        type: pascal
+  schema-properties-casing:
+    description: Schema properties should be snake_case (the dominant convention in this API).
+    severity: info
+    given: $.components.schemas[*].properties
+    then:
+      field: '@key'
+      function: casing
+      functionOptions:
+        type: snake
+  no-empty-descriptions:
+    description: Descriptions must not be empty strings.
+    severity: warn
+    given: $..description
+    then:
       function: truthy
