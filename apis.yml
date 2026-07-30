@@ -5,9 +5,21 @@ description: >-
   server components. It provides connection pooling, async I/O, TLS/SSL support, authentication, cookie management, and
   content negotiation for Java applications making HTTP requests.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/apache-http.png
 tags:
   - Apache
   - HTTP Client
@@ -19,43 +31,52 @@ modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/apache-http/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-  - aid: apache-http:apache-http-client-api
-    name: Apache HttpComponents Client API
-    description: >-
-      Java HTTP client library API for executing HTTP requests with connection pooling, async I/O, TLS/SSL,
-      authentication, cookie management, and proxy support via Apache HttpComponents 5.x.
-    humanURL: https://hc.apache.org/httpcomponents-client-5.3.x/
-    tags:
-      - Authentication
-      - Connection Pooling
-      - HTTP Client
-      - Java
-      - TLS
-    properties:
-      - type: Documentation
-        url: https://hc.apache.org/httpcomponents-client-5.3.x/
-      - type: OpenAPI
-        url: openapi/apache-http-client-openapi.yml
-      - type: JSONSchema
-        url: json-schema/http-client-httprequest-schema.json
-      - type: JSONLD
-        url: json-ld/apache-http-client-context.jsonld
-  - aid: apache-http:apache-http-java-sdk
-    name: Apache HttpComponents Java SDK
-    description: >-
-      Maven artifact for Apache HttpComponents HttpClient 5.x providing full HTTP client functionality including fluent
-      API, async client, and reactive streams support.
-    humanURL: https://hc.apache.org/httpcomponents-client-5.3.x/dependency-info.html
-    tags:
-      - Java
-      - Maven
-      - SDK
-    properties:
-      - type: Documentation
-        url: https://hc.apache.org/httpcomponents-client-5.3.x/dependency-info.html
-      - type: SDKs
-        url: https://search.maven.org/artifact/org.apache.httpcomponents.client5/httpclient5
-        title: Java SDK (Maven Central)
+- aid: apache-http:apache-http-java-sdk
+  name: Apache HttpComponents Java SDK
+  description: >-
+    Maven artifact for Apache HttpComponents HttpClient 5.x providing full HTTP client functionality including
+    fluent API, async client, and reactive streams support.
+  humanURL: https://hc.apache.org/httpcomponents-client-5.3.x/dependency-info.html
+  tags:
+  - Java
+  - Maven
+  - SDK
+  properties:
+  - type: Documentation
+    url: https://hc.apache.org/httpcomponents-client-5.3.x/dependency-info.html
+  - type: SDKs
+    url: https://search.maven.org/artifact/org.apache.httpcomponents.client5/httpclient5
+    title: Java SDK (Maven Central)
+- aid: apache-http:apache-http-configuration-api
+  name: Apache HttpComponents Configuration API
+  description: Client configuration operations
+  humanURL: https://hc.apache.org/httpcomponents-client-5.3.x/
+  tags:
+  - Configuration
+  properties:
+  - type: OpenAPI
+    url: openapi/apache-http-configuration-api-openapi.yml
+  - type: Documentation
+    url: https://hc.apache.org/httpcomponents-client-5.3.x/
+  - type: JSONSchema
+    url: json-schema/http-client-httprequest-schema.json
+  - type: JSONLD
+    url: json-ld/apache-http-client-context.jsonld
+- aid: apache-http:apache-http-requests-api
+  name: Apache HttpComponents Requests API
+  description: HTTP request execution operations
+  humanURL: https://hc.apache.org/httpcomponents-client-5.3.x/
+  tags:
+  - Requests
+  properties:
+  - type: OpenAPI
+    url: openapi/apache-http-requests-api-openapi.yml
+  - type: Documentation
+    url: https://hc.apache.org/httpcomponents-client-5.3.x/
+  - type: JSONSchema
+    url: json-schema/http-client-httprequest-schema.json
+  - type: JSONLD
+    url: json-ld/apache-http-client-context.jsonld
 common:
   - type: AgenticAccess
     url: agentic-access/apache-http-agentic-access.yml
