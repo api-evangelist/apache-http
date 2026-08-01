@@ -1,0 +1,16 @@
+{
+  "provider": "apache-http",
+  "sources": [
+    "apache-http-configuration-api-openapi.yml",
+    "apache-http-requests-api-openapi.yml"
+  ],
+  "outputs": [
+    "apache-http-configuration-api-openapi.yml",
+    "apache-http-requests-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
