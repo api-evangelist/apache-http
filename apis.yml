@@ -78,6 +78,13 @@ apis:
   - type: JSONLD
     url: json-ld/apache-http-client-context.jsonld
 common:
+  - type: SecurityPolicy
+    url: https://github.com/apache/httpcomponents-client/blob/master/SECURITY.md
+  - type: CodeOfConduct
+    url: https://github.com/apache/httpcomponents-client/blob/master/CODE_OF_CONDUCT.md
+  - type: License
+    name: Apache-2.0
+    url: https://github.com/apache/httpcomponents-client/blob/master/LICENSE
   - type: AgenticAccess
     url: agentic-access/apache-http-agentic-access.yml
   - type: VulnerabilityDisclosure
