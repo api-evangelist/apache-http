@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache HttpComponents Client Configuration Requests API",
+    "version": "5.3.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Requests",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache HttpComponents Execute Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.example.com/execute",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Execute an HTTP request using the Apache HttpComponents client with the provided request configuration."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,123 @@
+{
+  "item": [
+    {
+      "id": "edf38c90-6f20-4077-b434-872aa35dc319",
+      "name": "Requests",
+      "description": {
+        "content": "HTTP request execution operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3e2ab3ec-ee1f-4313-b5d0-56d94db46231",
+          "name": "Apache HttpComponents Execute Request",
+          "request": {
+            "name": "Apache HttpComponents Execute Request",
+            "description": {
+              "content": "Execute an HTTP request using the Apache HttpComponents client with the provided request configuration.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "execute"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"method\": \"<string>\",\n  \"uri\": \"<string>\",\n  \"headers\": \"<object>\",\n  \"body\": \"<string>\",\n  \"contentType\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2542f15e-6ea7-4407-8189-b630aeab4d38",
+              "name": "Request executed successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "execute"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"method\": \"GET\",\n  \"uri\": \"https://api.example.com/data\",\n  \"headers\": {\n    \"Accept\": \"application/json\",\n    \"Authorization\": \"Bearer token\"\n  },\n  \"body\": \"{\\\"key\\\": \\\"value\\\"}\",\n  \"contentType\": \"application/json\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"statusCode\": 200,\n  \"reasonPhrase\": \"OK\",\n  \"headers\": {\n    \"Content-Type\": \"application/json\"\n  },\n  \"body\": \"{\\\"result\\\": \\\"ok\\\"}\",\n  \"contentType\": \"application/json\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.example.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e183a85c-0cc5-430b-af2d-373100eafd2b",
+    "name": "Apache HttpComponents Client Configuration Requests API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Reference API specification for Apache HttpComponents HTTP client library, covering request execution, connection management, authentication, and proxy configuration.\n\nContact Support:\n Email: dev@hc.apache.org",
+      "type": "text/plain"
+    }
+  }
+}
