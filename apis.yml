@@ -97,6 +97,8 @@ apis:
   - type: JSONLD
     url: json-ld/apache-http-client-context.jsonld
 common:
+  - type: Website
+    url: https://www.apache.org/
   - type: SecurityPolicy
     url: https://github.com/apache/httpcomponents-client/blob/master/SECURITY.md
   - type: CodeOfConduct
