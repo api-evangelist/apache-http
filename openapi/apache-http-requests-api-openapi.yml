@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Apache HttpComponents Client Configuration Requests API
+  title: Apache HttpComponents Client Requests API
   version: 5.3.0
   description: Reference API specification for Apache HttpComponents HTTP client library, covering request execution, connection management, authentication, and proxy configuration.
   contact:

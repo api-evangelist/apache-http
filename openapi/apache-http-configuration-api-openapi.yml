@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Apache HttpComponents Client Configuration API
   version: 5.3.0
@@ -49,30 +49,6 @@ paths:
           description: Proxy configured
 components:
   schemas:
-    ProxyConfig:
-      type: object
-      description: HTTP proxy configuration for Apache HttpComponents client
-      properties:
-        host:
-          type: string
-          description: Proxy hostname
-          example: proxy.example.com
-        port:
-          type: integer
-          description: Proxy port
-          example: 8080
-        scheme:
-          type: string
-          description: Proxy scheme (http or https)
-          example: http
-        username:
-          type: string
-          description: Proxy authentication username
-          example: proxyuser
-        password:
-          type: string
-          description: Proxy authentication password
-          example: ''
     ConnectionConfig:
       type: object
       description: Connection configuration for Apache HttpComponents client
@@ -97,3 +73,27 @@ components:
           type: integer
           description: Keep-alive timeout in milliseconds
           example: 60000
+    ProxyConfig:
+      type: object
+      description: HTTP proxy configuration for Apache HttpComponents client
+      properties:
+        host:
+          type: string
+          description: Proxy hostname
+          example: proxy.example.com
+        port:
+          type: integer
+          description: Proxy port
+          example: 8080
+        scheme:
+          type: string
+          description: Proxy scheme (http or https)
+          example: http
+        username:
+          type: string
+          description: Proxy authentication username
+          example: proxyuser
+        password:
+          type: string
+          description: Proxy authentication password
+          example: ''
