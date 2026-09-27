@@ -37,7 +37,7 @@ tags:
   - Apache
   - HTTP Client
   - Java
-  - Open-Source
+  - Open Source
   - SDK
 tags_raw:
   - Apache
@@ -45,6 +45,7 @@ tags_raw:
   - Java
   - Open Source
   - SDK
+  - Open-Source
 created: '2026-03-16'
 modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/apache-http/refs/heads/main/apis.yml

@@ -49,30 +49,6 @@ paths:
           description: Proxy configured
 components:
   schemas:
-    ConnectionConfig:
-      type: object
-      description: Connection configuration for Apache HttpComponents client
-      properties:
-        connectTimeout:
-          type: integer
-          description: Connection timeout in milliseconds
-          example: 5000
-        socketTimeout:
-          type: integer
-          description: Socket read timeout in milliseconds
-          example: 30000
-        maxConnections:
-          type: integer
-          description: Maximum total connections in pool
-          example: 200
-        maxConnectionsPerRoute:
-          type: integer
-          description: Maximum connections per route
-          example: 20
-        keepAliveTimeout:
-          type: integer
-          description: Keep-alive timeout in milliseconds
-          example: 60000
     ProxyConfig:
       type: object
       description: HTTP proxy configuration for Apache HttpComponents client
@@ -97,3 +73,27 @@ components:
           type: string
           description: Proxy authentication password
           example: ''
+    ConnectionConfig:
+      type: object
+      description: Connection configuration for Apache HttpComponents client
+      properties:
+        connectTimeout:
+          type: integer
+          description: Connection timeout in milliseconds
+          example: 5000
+        socketTimeout:
+          type: integer
+          description: Socket read timeout in milliseconds
+          example: 30000
+        maxConnections:
+          type: integer
+          description: Maximum total connections in pool
+          example: 200
+        maxConnectionsPerRoute:
+          type: integer
+          description: Maximum connections per route
+          example: 20
+        keepAliveTimeout:
+          type: integer
+          description: Keep-alive timeout in milliseconds
+          example: 60000
