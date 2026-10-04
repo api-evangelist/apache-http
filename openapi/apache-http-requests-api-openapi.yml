@@ -37,31 +37,6 @@ paths:
                 $ref: '#/components/schemas/HttpResponse'
 components:
   schemas:
-    HttpResponse:
-      type: object
-      description: HTTP response from Apache HttpComponents client execution
-      properties:
-        statusCode:
-          type: integer
-          description: HTTP response status code
-          example: 200
-        reasonPhrase:
-          type: string
-          description: HTTP reason phrase
-          example: OK
-        headers:
-          type: object
-          description: Response headers as key-value pairs
-          example:
-            Content-Type: application/json
-        body:
-          type: string
-          description: Response body content
-          example: '{"result": "ok"}'
-        contentType:
-          type: string
-          description: Content-Type of the response body
-          example: application/json
     HttpRequest:
       type: object
       description: HTTP request configuration for Apache HttpComponents client
@@ -87,4 +62,29 @@ components:
         contentType:
           type: string
           description: Content-Type header value
+          example: application/json
+    HttpResponse:
+      type: object
+      description: HTTP response from Apache HttpComponents client execution
+      properties:
+        statusCode:
+          type: integer
+          description: HTTP response status code
+          example: 200
+        reasonPhrase:
+          type: string
+          description: HTTP reason phrase
+          example: OK
+        headers:
+          type: object
+          description: Response headers as key-value pairs
+          example:
+            Content-Type: application/json
+        body:
+          type: string
+          description: Response body content
+          example: '{"result": "ok"}'
+        contentType:
+          type: string
+          description: Content-Type of the response body
           example: application/json
