@@ -98,6 +98,12 @@ apis:
   - type: JSONLD
     url: json-ld/apache-http-client-context.jsonld
 common:
+  - type: Plans
+    url: plans/apache-http-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/apache-http-rate-limits.yml
+  - type: FinOps
+    url: finops/apache-http-finops.yml
   - type: Website
     url: https://www.apache.org/
   - type: SecurityPolicy
